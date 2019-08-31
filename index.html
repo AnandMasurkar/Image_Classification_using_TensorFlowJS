@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Load the latest version of TensorFlow.js -->
+    <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+    <script src="https://unpkg.com/@tensorflow-models/mobilenet@2.0.2"></script>
+
+
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+
+    <title>TensorFlow.js</title>
+</head>
+<body style="background-color: #f5f6f7; width: auto;">
+	
+	    <div class="uk-text-center uk-align-center" style="background-color: #ff7600; padding-top: 50px;">
+	        <h1 class="uk-heading-line uk-text-bold">
+	        	<span>Image Classification using Pre-trained Model</span>
+	        </h1>
+	        <h4>TensorFlow.js Implementation</h4>	
+	    </div>
+<div class="uk-text-center" uk-grid>
+    <div class="uk-width-1-3">
+        <input id="image-selector" style="display: none" type="file" multiple>
+        <br><br><br><br>
+	        <button class="uk-button  uk-button-large uk-align-center" 
+	        style="background-color:#66ffff; color: black; border-width: 2px; border-style: solid;" onclick="display_image();" type="button">
+	        <b>Select Image</b>
+	        </button>
+	        <button class="uk-button uk-button-medium uk-align-center" uk-tooltip="title: Default selected model; pos: left;" style="color: black; border-width: 2px; border-style: solid;">Pre-trained Mobile Net model 
+	        	<!-- <span uk-icon="icon:  triangle-down"></span> -->
+	        </button>
+	        <!-- For Future Enhancement of the project to include multiple pre-trained models -->
+			<!-- <div uk-dropdown>
+				<ul class="uk-nav uk-dropdown-nav uk-list uk-list-striped">
+				    <li>Mobile Net model</li>
+				    <li>List item 2</li>
+				    <li>List item 3</li>
+				</ul>
+			    
+			</div> -->
+    </div>
+    <div class="uk-width-1-3">
+		    <h2><b>Selected Image</b></h2>
+		    <div class="uk-align-center"style="border-width: 10px; border-style: solid; height:200px; width:200px; border-color: red; background-color: white">
+		    	<img class="uk-align-center" id="selected-image" style="height:200px; width:200px">
+		    </div>
+    </div>
+    <div class="uk-width-1-3">
+    		<br><br><br><br>
+	        <button id="predict_button" class="uk-button  uk-button-large uk-align-center" 
+	        style="background-color: #0099ff; color: black; border-width: 2px; 
+	        border-style: solid;"  onclick="predict();" type="button"><b>Predict</b>
+	        </button>
+	</div>
+</div>
+	<div class="uk-align-center">
+	    <h2 class="uk-text-center"><b>Top Results</b></h2>
+	    <div class="uk-align-center"style="border-width: 10px; border-style: solid; border-color: green; height:200px; width:800px; background-color: white">
+	    	<p id="c1" class="uk-text-bold uk-text-medium">
+	    		
+	    	</p>
+	    	<p id="p1" class="uk-text-bold uk-text-medium">
+	    		
+	    	</p>
+	    	<hr>
+	    	<p id="c2" class="uk-text-bold uk-text-medium">
+	    		
+	    	</p>
+	    	<p id="p2" class="uk-text-bold uk-text-medium">
+	    		
+	    	</p>
+	    </div>
+	</div>
+
+	<script src="index.js"></script>
+</body>
+
+</html>
